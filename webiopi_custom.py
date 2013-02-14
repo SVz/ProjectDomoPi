@@ -17,7 +17,7 @@ def myMacroWithArgs(arg1, arg2, arg3):
 
 # A custom macro without args which return nothing
 def myMacroWithoutArgs():
-    print("myMacroWithoutArgs()")
+    print("radioEmission 6 87654321 1 on")
     os.system("/home/pi/Downloads/hcc/radioEmission 6 87654321 1 on")
 
 # Example loop which toggle GPIO 7 each 5 seconds
