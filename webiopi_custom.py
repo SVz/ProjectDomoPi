@@ -9,10 +9,9 @@ GPIO = webiopi.GPIO
 # -------------------------------------------------- #
 # Macro definition part                              #
 # -------------------------------------------------- #
-
-def radioEmission(arg1):
-#   print("radioEmission 6 87654321 1 %s" % (arg1))
-    command = "radioEmission 6 87654321 1 " + arg1
+# macro 2 arguments code prise et etat (on,off)
+def radioEmission(arg1, arg2):
+    command = "radioEmission 6 " + arg1 + " 1 " + arg2
     print(command)
     os.system("/home/pi/Downloads/hcc/" + command)
 
