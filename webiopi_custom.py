@@ -10,6 +10,12 @@ GPIO = webiopi.GPIO
 # Macro definition part                              #
 # -------------------------------------------------- #
 
+def radioEmission(arg1):
+#   print("radioEmission 6 87654321 1 %s" % (arg1))
+    command = "radioEmission 6 87654321 1 " + arg1
+    print(command)
+    os.system("/home/pi/Downloads/hcc/" + command)
+
 # A custom macro which prints out the arg received and return OK
 def myMacroWithArgs(arg1, arg2, arg3):
     print("myMacroWithArgs(%s, %s, %s)" % (arg1, arg2, arg3))
@@ -17,7 +23,7 @@ def myMacroWithArgs(arg1, arg2, arg3):
 
 # A custom macro without args which return nothing
 def myMacroWithoutArgs():
-    print("radioEmission 6 87654321 1 on")
+    print("myMacroWithoutArgs()")
     os.system("/home/pi/Downloads/hcc/radioEmission 6 87654321 1 on")
 
 # Example loop which toggle GPIO 7 each 5 seconds
@@ -48,6 +54,7 @@ server = webiopi.Server(port=8000, login="webiopi", password="raspberry")
 # or     webiopi.Server(port=8000, passwdfile="/etc/webiopi/passwd")
 
 # Register the macros so you can call it with Javascript and/or REST API
+server.addMacro(radioEmission)
 server.addMacro(myMacroWithArgs)
 server.addMacro(myMacroWithoutArgs)
 
