@@ -33,12 +33,12 @@
 		
 		// create a button which call myMacroWithoutArgs
 		// button = webiopi().createMacroButton("macro", "Prises ON", "myMacroWithoutArgs");
-		button = webiopi().createMacroButton("macro", "Prises ON", "radioEmission", ["on"]);
+		button = webiopi().createMacroButton("macro", "Prise ON", "radioEmission", ["on"]);
 		content.append(button); // append button to content div
 		
 		// create a button which call myMacroWithArgs with "1,2,3" as argument
 		// button = webiopi().createMacroButton("macro", "Prises OFF", "myMacroWithoutArgs");
-		button = webiopi().createMacroButton("macro", "Prises OFF", "radioEmission", ["off"]);
+		button = webiopi().createMacroButton("macro", "Prise OFF", "radioEmission", ["off"]);
 		content.append(button); // append button to content div
 		
 		// the previous button will always call myMacroWithArgs with the same "1,2,3" argument
