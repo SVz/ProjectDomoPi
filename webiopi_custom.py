@@ -13,7 +13,7 @@ GPIO = webiopi.GPIO
 def radioEmission(arg1, arg2):
     command = "radioEmission 6 " + arg1 + " 1 " + arg2
     print(command)
-    os.system("/home/pi/Downloads/hcc/" + command)
+    os.system("/home/pi/git/ProjectDomoPi/" + command)
 
 # A custom macro which prints out the arg received and return OK
 def myMacroWithArgs(arg1, arg2, arg3):
@@ -23,7 +23,6 @@ def myMacroWithArgs(arg1, arg2, arg3):
 # A custom macro without args which return nothing
 def myMacroWithoutArgs():
     print("myMacroWithoutArgs()")
-    os.system("/home/pi/Downloads/hcc/radioEmission 6 87654321 1 on")
 
 # Example loop which toggle GPIO 7 each 5 seconds
 def loop():

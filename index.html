@@ -3,49 +3,37 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content = "height = device-height, width = 420, user-scalable = no" /> 
-	<title>WebIOPi | Demo</title>
+	<title>WebIOPi | SVz Domotique</title>
 	<script type="text/javascript" src="/webiopi.js"></script>
 	<script type="text/javascript">
 	webiopi().ready(function() {
 		var content, button;
 		content = $("#content");
 			
-		// create a "SWITCH" labeled button for GPIO 0
-		//button = webiopi().createGPIOButton(0, "SWITCH");
-		//content.append(button); // append button to content div
-		               
-		// create a "LED" labeled button for GPIO 7
-		//button = webiopi().createGPIOButton(7, "LED");
-		//content.append(button); // append button to content div
-		       
-		// create a button that output a single pulse
-		//button = webiopi().createPulseButton("pulse", "Pulse", 7);
-		//content.append(button); // append button to content div
-		
-		// create a button which output a bit sequence on GPIO 7 with a 100ms period 
-		//button = webiopi().createSequenceButton("sos", "S.O.S 1", 7, 100, "01010100110011001100101010");
-		//content.append(button); // append button to content div
-		       
-		// the previous button will always output the same sequence
-		// you can also create a simple button with your own function 
-		//button = webiopi().createButton("sos2", "S.O.S 2", outputSequence);
-		//content.append(button); // append button to content div
-		
-		// create a button which call myMacroWithoutArgs
-		// button = webiopi().createMacroButton("macro", "Prises ON", "myMacroWithoutArgs");
-		button = webiopi().createMacroButton("macro", "Prise ON", "radioEmission", ["87654321","on"]);
+		// create a button which call radioEmission
+		button = webiopi().createMacroButton("macro", "Prise 1 ON", "radioEmission", ["87654321","on"]);
 		content.append(button); // append button to content div
 		
-		// create a button which call myMacroWithArgs with "1,2,3" as argument
-		// button = webiopi().createMacroButton("macro", "Prises OFF", "myMacroWithoutArgs");
-		button = webiopi().createMacroButton("macro", "Prise OFF", "radioEmission", ["87654321","off"]);
+		// create a button which call radioEmission
+		button = webiopi().createMacroButton("macro", "Prise 1 OFF", "radioEmission", ["87654321","off"]);
 		content.append(button); // append button to content div
 		
-		// the previous button will always call myMacroWithArgs with the same "1,2,3" argument
-		// you can also create a simple button with your own function 
-		button = webiopi().createButton("macro2", "Macro 3", callMacro);
-		content.append(button); // append button to content div
-		
+                // create a button which call radioEmission
+                button = webiopi().createMacroButton("macro", "Prise 2 ON", "radioEmission", ["12345678","on"]);
+                content.append(button); // append button to content div
+
+                // create a button which call radioEmission
+                button = webiopi().createMacroButton("macro", "Prise 2 OFF", "radioEmission", ["12345678","off"]);
+                content.append(button); // append button to content div
+
+                // create a button which call radioEmission
+                button = webiopi().createMacroButton("macro", "Prise 3 ON", "radioEmission", ["12348765","on"]);
+                content.append(button); // append button to content div
+
+                // create a button which call radioEmission
+                button = webiopi().createMacroButton("macro", "Prise 3 OFF", "radioEmission", ["12348765","off"]);
+                content.append(button); // append button to content div
+
 		// you can also create a button which calls a different function for mouse down and up events
 		//button = webiopi().createButton("hold", "Hold", mousedown, mouseup);
 		//content.append(button);
@@ -92,11 +80,11 @@
 		button {
 			display: block;
 			margin: 5px 5px 5px 5px;
-			width: 180px;
+			width: 200px;
 			height: 45px;
 			font-size: 24pt;
 			font-weight: bold;
-			color: black;
+			color: blue;
 		}
 		
 		input[type="range"] {
